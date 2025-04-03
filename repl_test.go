@@ -1,8 +1,9 @@
 package main
 
 import (
-	"testing" 
+	"testing"
 )
+
 func TestCleanInput(t *testing.T) {
 	cases := []struct {
 		input    string
@@ -17,7 +18,7 @@ func TestCleanInput(t *testing.T) {
 			expected: []string{"nyellow", "werld"},
 		},
 		{
-			input : "brokie lemonadass",
+			input:    "brokie lemonadass",
 			expected: []string{"brokie", "lemonadass"},
 		},
 	}
