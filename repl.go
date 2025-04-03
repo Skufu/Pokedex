@@ -5,10 +5,17 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"Pokedex/internal/pokeapi"
 )
 
 func startRepl() {
 	scanner := bufio.NewScanner(os.Stdin)
+
+	config := &Config{
+		pokeapiClient: pokeapi.NewClient(),
+	}
+
 	for {
 		fmt.Print("Pokedex > ")
 		if scanner.Scan() {
@@ -22,7 +29,7 @@ func startRepl() {
 
 			command, exists := getCommands()[commandName]
 			if exists {
-				err := command.callback()
+				err := command.callback(config)
 				if err != nil {
 					fmt.Println("Error executing command:", err)
 				}
