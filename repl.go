@@ -14,6 +14,7 @@ func startRepl() {
 
 	config := &Config{
 		pokeapiClient: pokeapi.NewClient(),
+		caughtPokemon: make(map[string]pokeapi.Pokemon),
 	}
 
 	for {
@@ -26,10 +27,14 @@ func startRepl() {
 			}
 
 			commandName := words[0]
+			args := []string{}
+			if len(words) > 1 {
+				args = words[1:]
+			}
 
 			command, exists := getCommands()[commandName]
 			if exists {
-				err := command.callback(config)
+				err := command.callback(config, args)
 				if err != nil {
 					fmt.Println("Error executing command:", err)
 				}
