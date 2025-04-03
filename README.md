@@ -1,6 +1,6 @@
 # Pokedex
 
-A command-line Pokedex application written in Go that allows you to explore Pokemon location areas, catch Pokemon, and view your collected Pokemon.
+A command-line Pokedex application written in Go that allows you to explore Pokemon location areas, catch Pokemon, and view your collected Pokemon with help from boot.dev.
 
 ## Description
 
@@ -106,10 +106,8 @@ Types:
   - poison
 ```
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
 - [PokeAPI](https://pokeapi.co/) for providing the Pokemon data API
+- [boot.dev](https://www.boot.dev/lessons/dff17f87-1ce8-43ce-a43b-2cb611ce76f1) for providing the guide for building this
